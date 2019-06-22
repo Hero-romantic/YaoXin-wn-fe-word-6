@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>吾能第六次作业</title>
+    <link  rel="stylesheet" href="../css/work6/work6.css">
+    <link rel="stylesheet" href="../iconfont/work4.0/font_lxs2lh1a6mm/iconfont.css">
+<script>
+    var xhr = null;
+    if (window.XMLHttpRequest)
+    {
+        // 兼容 IE7+，Firefox,chrome,opera,safari
+        xhr = new XMLHttpRequest();
+    }else{// 兼容 IE6，IE5
+        xhr = new ActiveXObject("Microsoft.XMLHTTP")
+    }
+    //创建AJAX核心对象
+
+    xhr.open("GET","https://v1.itooi.cn/kugou/search?keyword=xxxx&type=song&pageSize=100&page=0",true);
+    xhr.send();
+    //向服务器发送请求
+
+    xhr.onreadystatechange = function() {
+        if (xhr.readyState == 4 && xhr.status == 200) {
+            document.getElementById("result").innerHTML = xhr.responseText;
+        }
+    }
+</script>
+</head>
+<body>
+<!--背景图片-->
+<div class="mod_search"  role="search">
+    <img src="../img/work6/Background.jpg">
+    <div class="mod_search_input">
+        <input class="search_input__input" aria-label="请输入搜索内容" type="text" placeholder=""/>
+       <button><a href="" class="search_input__btn"><i class="iconfont">&#xe63d;</i></a></button>
+    </div>
+</div>
+
+</div>
+</body>
+</html>
